@@ -1,0 +1,18 @@
+Group paired with: Mike, Liza, and Justin
+Their project: Covid Mortality Analysis
+Our team members present (all were present): Kahlil Monje and Thomas Grinstead
+
+Major points of feedback
+* They suggested to split up the game into the opening, middle, and end
+    - This was a very helpful piece of feedback that we ended up incorporating into our exploratory and other analysis steps.
+    - We split up the game this way for board and piece analysis
+
+* They suggested scaling the dataset because our data is fairly large
+    - This is something that we also implemented for certain steps
+    - We tried to use all the data when possible, but a lot of the analysis steps were extermely computationally expensive, which makes using subsets of the data a good choice
+
+* They suggested looking into mathematical concepts such as game theory or Markov chains
+    - We looked into this, but we probably will not be using it in our project
+    - Although it is interesting, we are focusing on other aspects of the data
+
+Quality of feedback: Overall, the quality of the feedback was excellent. We had a very good dialogue and they asked a lot of good questions. They were respectful and made very good suggestions that we ended up implementing.
