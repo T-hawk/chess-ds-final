@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Guess the ELO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="page">
+      <section class="card">
+        <h1>Guess the ELO</h1>
+        <p class="subtitle">Upload a PGN and let the model make its best guess. The model analyzes your game using stockfish and inputs it into a neural network to guess your ELO.</p>
+
+        <form method="post" enctype="multipart/form-data">
+          <input type="file" name="pgn_file" accept=".pgn">
+          <button type="submit">Guess</button>
+        </form>
+
+        {% if error %}
+          <div class="message">{{ error }}</div>
+        {% endif %}
+
+        {% if prediction %}
+          <section class="result">
+            <div class="result-row primary">
+              <span class="label">Predicted ELO</span>
+              <span class="value">{{ prediction.prediction }}</span>
+            </div>
+            {% if prediction.actual_game_elo is not none %}
+              <div class="result-row">
+                <span class="label">Actual Game ELO</span>
+                <span class="value">{{ prediction.actual_game_elo }}</span>
+              </div>
+            {% endif %}
+            {% if prediction.white_elo is not none %}
+              <div class="result-row">
+                <span class="label">White ELO</span>
+                <span class="value">{{ prediction.white_elo }}</span>
+              </div>
+            {% endif %}
+            {% if prediction.black_elo is not none %}
+              <div class="result-row">
+                <span class="label">Black ELO</span>
+                <span class="value">{{ prediction.black_elo }}</span>
+              </div>
+            {% endif %}
+          </section>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>
